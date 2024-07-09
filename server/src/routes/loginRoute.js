@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (req, res) => {
     console.log(req.body)
-    if (req.body.password === process.env.PASSWORD) {
+    if (req.body.password === process.env.PASSWORD && req.body.email === process.env.EMAIL) {
         const token = jwt.sign({
             userID: 1,
         }, process.env.SECRET)
